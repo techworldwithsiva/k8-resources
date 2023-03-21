@@ -14,16 +14,6 @@ spec:
     min:
       cpu: 100m
     type: Container
-  
-  - type: "Pod"
-    max:
-      cpu: "1" 
-      memory: "1Gi" 
-    min:
-      cpu: "200m" 
-      memory: "6Mi" 
-    maxLimitRequestRatio:
-      cpu: "10"
 ---
 apiVersion: v1
 kind: Pod
