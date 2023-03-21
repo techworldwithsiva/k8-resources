@@ -8,3 +8,10 @@ spec:
     imagePullPolicy: Always
     name: stress
     command: ["sleep", "200"]
+    resources:
+      requests:
+        cpu: "150m" # 1 CPU = 1000m
+        memory: "200Mi"
+      limits:
+        cpu: "200m"
+        memory: "300Mi"
