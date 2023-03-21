@@ -15,15 +15,15 @@ spec:
       cpu: 100m
     type: Container
   
-  - default: # this section defines default limits
-      cpu: 500m
-    defaultRequest: # this section defines default requests
-      cpu: 500m
-    max: # max and min define the limit range
-      cpu: "1"
+  - type: "Pod"
+    max:
+      cpu: "1" 
+      memory: "1Gi" 
     min:
-      cpu: 100m
-    type: Pod
+      cpu: "200m" 
+      memory: "6Mi" 
+    maxLimitRequestRatio:
+      cpu: "10"
 ---
 apiVersion: v1
 kind: Pod
