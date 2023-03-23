@@ -4,7 +4,7 @@ metadata:
   name: env
 spec:
   containers:
-  - name: nginx
+  - name: ngin
     image: nginx
     env:
     - name: course
@@ -13,3 +13,7 @@ spec:
       value: siva
     - name: duration
       value: 25hrs
+    - name: DB_HOST
+      value: db.admin.com
+    - name: username
+      value: sivakumar
