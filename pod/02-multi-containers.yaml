@@ -2,7 +2,7 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: nginx
+  name: multi
 spec:
   containers:
     - name: nginx
@@ -11,4 +11,5 @@ spec:
       - containerPort: 80
     - name: almalinux
       image: almalinux
-      
+      command: ["sleep","10"]
+
