@@ -11,3 +11,5 @@ spec:
       value: docker
     - name: trainer
       value: siva
+    - name: duration
+      value: 25hrs
