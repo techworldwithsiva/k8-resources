@@ -74,7 +74,7 @@ spec:
     imagePullPolicy: Always
     image: techworldwithsiva/web:k8
     volumeMounts:
-    - name: nginx-conf
+    - name: nginx-config
       mountPath: /etc/nginx/nginx.conf
       subPath: nginx.conf
     resources:
