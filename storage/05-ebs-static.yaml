@@ -3,6 +3,7 @@ kind: PersistentVolume
 metadata:
   name: my-ebs-volume
 spec:
+  storageClassName: manual
   capacity:
     storage: 50Gi
   accessModes:
@@ -16,6 +17,7 @@ kind: PersistentVolumeClaim
 metadata:
   name: my-ebs-pvc
 spec:
+  storageClassName: manual
   accessModes:
     - ReadWriteOnce
   resources:
