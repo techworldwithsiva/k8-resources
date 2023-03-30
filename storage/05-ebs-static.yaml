@@ -30,9 +30,7 @@ spec:
   resources:
     requests:
       storage: 10Gi
-  selector:
-    matchLabels:
-      name: my-ebs-volume
+  volumeName: my-ebs-volume
 ---
 apiVersion: v1
 kind: Pod
