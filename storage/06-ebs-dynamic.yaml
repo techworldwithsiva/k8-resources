@@ -1,36 +1,25 @@
+---
 apiVersion: storage.k8s.io/v1
 kind: StorageClass
 metadata:
-  name: manual
-provisioner: kubernetes.io/no-provisioner
+  name: ebs-sc
+provisioner: ebs.csi.aws.com
+reclaimPolicy: Retain
 volumeBindingMode: WaitForFirstConsumer
----
-apiVersion: v1
-kind: PersistentVolume
-metadata:
-  name: my-ebs-volume
-spec:
-  storageClassName: manual
-  capacity:
-    storage: 50Gi
-  accessModes:
-    - ReadWriteOnce
-  awsElasticBlockStore:
-    volumeID: vol-0b580a797aa2271c1 #replace volume ID
-    fsType: ext4
+parameters:
+  type: gp2
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: my-ebs-pvc
+  name: my-ebs-dynamic-pvc
 spec:
-  storageClassName: manual
+  storageClassName: ebs-sc
   accessModes:
     - ReadWriteOnce
   resources:
     requests:
-      storage: 10Gi
-  volumeName: my-ebs-volume
+      storage: 14Gi
 ---
 apiVersion: v1
 kind: Pod
@@ -46,4 +35,4 @@ spec:
   volumes:
   - name: my-ebs-volume
     persistentVolumeClaim:
-      claimName: my-ebs-pvc
+      claimName: my-ebs-dynamic-pvc
