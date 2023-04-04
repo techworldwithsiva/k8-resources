@@ -13,4 +13,4 @@ spec:
   - key: "tier"
     value: "DB"
     operator: "Equal"
-    #effect: "NoSchedule"
+    effect: "NoSchedule"
