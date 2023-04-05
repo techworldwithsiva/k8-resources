@@ -1,0 +1,12 @@
+apiVersion: v1
+data:
+  mapRoles: |
+    - groups:
+      - system:bootstrappers
+      - system:nodes
+      rolearn: arn:aws:iam::752692907119:role/eksctl-spot-cluster-nodegroup-spo-NodeInstanceRole-1HDE8WUV6VJFE
+      username: system:node:{{EC2PrivateDNSName}}
+  mapUsers: |
+    - userarn: arn:aws:iam::752692907119:user/eks-admin-trainee
+      username: eks-admin-trainee
+kind: ConfigMap
