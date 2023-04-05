@@ -17,7 +17,7 @@ kind: RoleBinding
 apiVersion: rbac.authorization.k8s.io/v1
 metadata:
   name: eks-user-role-binding
-  namespace: <namespace-name>
+  namespace: roboshop
 subjects:
 - kind: User
   name: eks-user
