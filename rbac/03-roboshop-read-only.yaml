@@ -1,0 +1,23 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  namespace: roboshop
+  name: roboshop-read-role
+rules:
+- apiGroups: ["*"] # "" indicates the core API group
+  resources: ["*"]
+  verbs: ["get","list","watch"]
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: roboshop-read-rolebinding
+  namespace: roboshop
+subjects:
+- kind: User
+  name: ramesh
+  apiGroup: rbac.authorization.k8s.io
+roleRef:
+  kind: Role
+  name: roboshop-read-role
+  apiGroup: rbac.authorization.k8s.io

@@ -9,6 +9,8 @@ data:
   mapUsers: |
     - userarn: arn:aws:iam::752692907119:user/roboshop-admin
       username: roboshop-admin
+    - userarn: arn:aws:iam::752692907119:user/ramesh
+      username: ramesh
 kind: ConfigMap
 metadata:
   creationTimestamp: "2023-04-05T14:29:13Z"
