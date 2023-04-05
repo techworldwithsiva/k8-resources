@@ -1,0 +1,29 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: roboshop
+---
+kind: Role
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: eks-user-role
+  namespace: roboshop
+rules:
+- apiGroups: [""]
+  resources: ["pods"]
+  verbs: ["get", "list", "watch"]
+---
+kind: RoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: eks-user-role-binding
+  namespace: <namespace-name>
+subjects:
+- kind: User
+  name: eks-user
+  apiGroup: rbac.authorization.k8s.io
+roleRef:
+  kind: Role
+  name: eks-user-role
+  apiGroup: rbac.authorization.k8s.io
+
